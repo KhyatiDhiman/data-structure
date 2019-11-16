@@ -1,0 +1,35 @@
+import java.util.*;
+public class LongestSubStringPalindrome{
+     public static void main(String []args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the string :- ");
+        String s = sc.next();
+        String longest="";
+        
+        for(int x=0;x<s.length();x++){
+            for(int y=x+1;y<=s.length();y++){
+                String t = s.substring(x,y);
+                if(isPalindrome(t)){
+                    if(t.length()>longest.length()){
+                        longest = t;
+                    }
+                }
+            }   
+        }
+        
+        System.out.print(longest);
+     }
+     
+     public static boolean isPalindrome(String s){
+         String rev="";
+         
+         for(int x=s.length()-1;x>=0;x--){
+             rev = rev + s.charAt(x);
+         }
+         
+        if(rev.equals(s))
+            return true;
+        else
+            return false;
+     }
+}
