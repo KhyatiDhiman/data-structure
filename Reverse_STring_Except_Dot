@@ -1,0 +1,23 @@
+import java.util.*;
+public class Reverse_String_Except_Dot {
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		String s=sc.next();
+		reverse_string_except_dot(s);
+	}
+
+	public static void reverse_string_except_dot(String s)
+	{
+		String s1[]=s.split("\\.");
+		for(int i=(s1.length)-1;i>0;i--)
+		{
+			System.out.print(s1[i]+".");
+		}
+		System.out.println(s1[0]);
+	}
+
+}
+
+
+	
