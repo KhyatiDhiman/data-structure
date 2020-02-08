@@ -1,0 +1,46 @@
+import java.util.*; 
+  
+public class Arrays_Rearrange {  
+  
+    
+    static void rearrangeArray(int arr[], int n) 
+    {  
+        Arrays.sort(arr); 
+       
+        int[] tempArr = new int[n]; // To store modified array 
+          
+        
+        int ArrIndex = 0;
+        for (int i = 0, j = n-1; i <= n / 2 || j > n / 2; 
+                                           i++, j--) 
+         { 
+            if(ArrIndex < n) 
+            { 
+                tempArr[ArrIndex] = arr[i]; 
+                ArrIndex++; 
+            } 
+              
+            if(ArrIndex < n) 
+            { 
+                tempArr[ArrIndex] = arr[j]; 
+                ArrIndex++; 
+            } 
+        } 
+             for (int i = 0; i < n; i++) 
+            arr[i] = tempArr[i]; 
+    } 
+    public static void main(String args[]) 
+    { 
+        Scanner sc = new Scanner(System.in);
+        int num=sc.nextInt()
+        int arr[] = new int[num]; 
+        int n = arr.length;
+        for(int i=0;i<num;i++){
+        arr[i]=sc.nextInt();
+        }
+        rearrangeArray(arr, n); 
+       
+        for (int i = 0; i < n; i++) 
+            System.out.print(arr[i]+" "); 
+    } 
+} 
